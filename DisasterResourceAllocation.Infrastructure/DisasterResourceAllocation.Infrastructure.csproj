@@ -2,17 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
-    <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="StackExchange.Redis" Version="2.6.122" />
-    <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="9.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="../DisasterResourceAllocation.Domain/DisasterResourceAllocation.Domain.csproj" />
+    <ProjectReference Include="..\DisasterResourceAllocation.Domain\DisasterResourceAllocation.Domain.csproj" />
+    <ProjectReference Include="..\DisasterResourceAllocation.Application\DisasterResourceAllocation.Application.csproj" />
   </ItemGroup>
 
 </Project>

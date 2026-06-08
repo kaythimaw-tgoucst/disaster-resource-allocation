@@ -2,12 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
-    <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="../DisasterResourceAllocation.Domain/DisasterResourceAllocation.Domain.csproj" />
+    <ProjectReference Include="..\DisasterResourceAllocation.Domain\DisasterResourceAllocation.Domain.csproj" />
   </ItemGroup>
 
 </Project>
