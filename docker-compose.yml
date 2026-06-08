@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes
+
+  api:
+    build:
+      context: .
+      dockerfile: DisasterResourceAllocation.API/Dockerfile
+    ports:
+      - "7000:80"
+      - "7001:443"
+    environment:
+      - ConnectionStrings__Redis=redis:6379
+    depends_on:
+      - redis
+
+volumes:
+  redis_data:
