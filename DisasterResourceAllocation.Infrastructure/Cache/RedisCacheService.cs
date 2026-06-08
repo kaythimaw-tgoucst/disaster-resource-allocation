@@ -16,7 +16,14 @@ public class RedisCacheService : ICacheService
     public async Task SetAsync<T>(string key, T value, TimeSpan? expiration = null)
     {
         var serialized = JsonSerializer.Serialize(value);
-        await _db.StringSetAsync(key, serialized, expiration);
+        if (expiration.HasValue)
+        {
+            await _db.StringSetAsync(key, serialized, new StackExchange.Redis.Expiration(expiration.Value));
+        }
+        else
+        {
+            await _db.StringSetAsync(key, serialized, StackExchange.Redis.Expiration.Default);
+        }
     }
 
     public async Task<T?> GetAsync<T>(string key)
