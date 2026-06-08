@@ -10,7 +10,7 @@ public class RedisCacheService : ICacheService
 
     public RedisCacheService(IConnectionMultiplexer redis)
     {
-        _db = redis.GetDatabase();
+        _db = redis.GetDatabase();      
     }
 
     public async Task SetAsync<T>(string key, T value, TimeSpan? expiration = null)
