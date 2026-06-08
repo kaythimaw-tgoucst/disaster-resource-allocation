@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="StackExchange.Redis" Version="2.13.17" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\DisasterResourceAllocation.Domain\DisasterResourceAllocation.Domain.csproj" />
     <ProjectReference Include="..\DisasterResourceAllocation.Application\DisasterResourceAllocation.Application.csproj" />
   </ItemGroup>
